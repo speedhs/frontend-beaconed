@@ -1,0 +1,18 @@
+/* Button.css */
+.custom-button {
+    background-color: black; /* Darkest shade of royal blue */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px; /* Rounded edges */
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  }
+  
+  .custom-button:hover {
+    background-color: #003366; /* Darker shade of royal blue on hover */
+    box-shadow: 0 50px 50px rgba(0, 0, 0, 0.2); /* Increased shadow on hover */
+  }
+  
