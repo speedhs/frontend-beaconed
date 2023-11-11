@@ -1,6 +1,6 @@
 // LoginPage.js
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import './Login.css';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
@@ -36,11 +36,11 @@ const LoginPage = () => {
               <Form.Check type="checkbox" label="Remember me" />
             </Form.Group>
 
-            <Button className = "btn-primary" variant="dark" type="button" size="lg" onClick={handleSignIn}>
+            <Button className = "btn-primary" variant="primary" type="button" size="lg" onClick={handleSignIn}>
               Sign In
             </Button>
 
-            <Button variant="warning" type="button" size="lg">
+            <Button variant="dark" type="button" size="lg">
               Sign in with Google
             </Button>
           </Form>
