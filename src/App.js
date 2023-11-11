@@ -1,6 +1,9 @@
 // App.js
 import React, { useState } from 'react';
 import Login from './pages/Login';
+// index.js or App.js
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const App = () => {
   // State for login credentials
@@ -16,9 +19,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Your App Title</h1>
-      {/* Other components or pages can be added here */}
-      <Login
+            <Login
         username={username}
         password={password}
         onUsernameChange={(e) => setUsername(e.target.value)}
