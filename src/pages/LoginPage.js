@@ -1,7 +1,7 @@
-// LoginPage.js
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
-import './Login.css';
+import { Link } from 'react-router-dom';
+import './LoginPage.css';
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,14 +14,13 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleSignIn = () => {
-    // Implement your sign-in logic here
-    console.log('Signing in with:', email, password);
-  };
 
+  const handleLogin = () => {
+    console.log(`Logging in with username: ${email} and password: ${password}`);
+  };
   return (
-    <div className="login-container">
-      <div className="left-column">  <Form>
+    < div className="login-container">  
+      <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email address</Form.Label>
               <Form.Control type="email" placeholder="Enter email" value={email} onChange={handleEmailChange} />
@@ -36,24 +35,14 @@ const LoginPage = () => {
               <Form.Check type="checkbox" label="Remember me" />
             </Form.Group>
 
-            <Button className = "btn-primary" variant="primary" type="button" size="lg" onClick={handleSignIn}>
+            <Button variant="primary" type="button" size="lg" onClick={handleLogin}>
               Sign In
             </Button>
-
-            <Button variant="dark" type="button" size="lg">
-              Sign in with Google
-            </Button>
-          </Form>
-        </div>
-        <div className="right-column">
-          <img
-            src="https://via.placeholder.com/1200x800" // Replace with your actual image source
-            alt="Logo"
-            className="img-fluid"
-            style={{ objectFit: 'cover', height: '100%', width: '100%' }}
-            />
-        </div>
-      
+            <div>
+              <Link to="/Register">New User? Sign Up</Link>
+            </div>
+           
+          </Form>      
     </div>
   );
 };
