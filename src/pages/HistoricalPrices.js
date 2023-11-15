@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import StockChart from '../components/StockChart';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import { Link } from 'react-router-dom';
 
 const HistoricalPrices = () => {
   const [chartData, setChartData] = useState([]);
@@ -37,7 +38,13 @@ const HistoricalPrices = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="text-dark">Stock Chart</h1>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h1 className="text-dark">Stock Chart</h1>
+        <Link to="/Dashboard" className="btn btn-primary">
+          View Dashboard
+        </Link>
+      </div>
+
       <div className="mb-3">
         <label className="text-dark me-2" htmlFor="symbol">Symbol:</label>
         <select className="form-select form-select-dark" id="symbol" value={symbol} onChange={handleSymbolChange}>

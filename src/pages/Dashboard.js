@@ -1,9 +1,8 @@
-// DashboardPage.js
-
 import React from 'react';
 import Profile from '../components/Profile';
 import HoldingsTable from '../components/HoldingsTable';
 import TotalProfit from '../components/TotalProfit';
+import { Link } from 'react-router-dom';
 
 const DashboardPage = () => {
   const profileData = {
@@ -51,7 +50,12 @@ const DashboardPage = () => {
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4">Dashboard</h1>
+      <div className="d-flex justify-content-between align-items-center mb-4">
+        <h1>Dashboard</h1>
+        <Link to="/History" className="btn btn-primary">
+          View HistoricalPrices
+        </Link>
+      </div>
 
       <div className="row">
         <div className="col-md-6">

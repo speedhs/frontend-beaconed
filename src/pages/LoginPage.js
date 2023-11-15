@@ -29,7 +29,7 @@ const LoginPage = () => {
   
         if (response.ok) {
           console.log('Signed in');
-          history.push('/Dashboard');
+          navigate('/Dashboard');
         } else {
           setError('Invalid credentials. Please try again.');
         }

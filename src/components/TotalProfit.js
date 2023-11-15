@@ -7,7 +7,7 @@ const TotalProfitLossCard = ({ holdingsData }) => {
   const totalProfitLoss = holdingsData.data.reduce((total, holding) => total + holding.pnl, 0);
 
   return (
-    <Card bg="primary" text="white">
+    <Card bg="dark" text="white">
       <Card.Body>
         <Card.Title>Total Profit/Loss</Card.Title>
         <Card.Text>{totalProfitLoss}</Card.Text>
