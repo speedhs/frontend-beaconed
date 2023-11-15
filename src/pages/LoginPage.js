@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import './LoginPage.css';
 
 const LoginPage = () => {
@@ -10,36 +9,7 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
 
-  const fetchData = async () => {
-    try {
-      // const apiUrl = 'http://localhost:8080/api/login/';
-      // const response = await axios.get(apiUrl, {
-      //   email,
-      //   password,
-      // }, {
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //     'Access-Control-Allow-Origin': '*',
-      //     'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      //     'Access-Control-Allow-Headers': 'Content-Type',
-      //   },
-      // });
-      const apiUrl = 'http://localhost:8080/api/login?email=${email}&password=${password}';
-      const response = await axios.get(apiUrl);
   
-      const data = response.data;
-      console.log(data);
-  
-      if (data) {
-        console.log('Signed in');
-        navigate('/dashboard');
-      } else {
-        setError('Invalid credentials. Please try again.');
-      }
-    } catch (error) {
-      console.error('Error fetching login data:', error);
-    }
-  };
   
 
   const handleEmailChange = (e) => {
@@ -50,10 +20,23 @@ const LoginPage = () => {
     setPassword(e.target.value);
   };
 
-  const handleLogin = () => {
+  const handleLogin = async ()=> {
     console.log(`Logging in with username: ${email} and password: ${password}`);
-    fetchData();
-  };
+      try {
+        const apiUrl = `http://localhost:8080/api/login?email=${email}&password=${password}`;
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+  
+        if (response.ok) {
+          console.log('Signed in');
+          history.push('/Dashboard');
+        } else {
+          setError('Invalid credentials. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error fetching login data:', error);
+      }
+    };
 
   return (
     <div className="login-container">
