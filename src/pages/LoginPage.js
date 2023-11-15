@@ -23,7 +23,7 @@ const LoginPage = () => {
   const handleLogin = async ()=> {
     console.log(`Logging in with username: ${email} and password: ${password}`);
       try {
-        const apiUrl = `http://localhost:8080/api/login?email=${email}&password=${password}`;
+        const apiUrl = `http://54.227.48.243:8080/api/login?email=${email}&password=${password}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
   

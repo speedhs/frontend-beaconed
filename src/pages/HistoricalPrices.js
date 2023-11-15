@@ -12,7 +12,7 @@ const HistoricalPrices = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const apiUrl = `http://localhost:8080/api/historical-data?symbol=${symbol}&from_date=${fromDate}&to_date=${toDate}`;
+        const apiUrl = `http://54.227.48.243:8080/api/historical-data?symbol=${symbol}&from_date=${fromDate}&to_date=${toDate}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
         setChartData(data);

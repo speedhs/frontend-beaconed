@@ -9,12 +9,12 @@ const DashboardPage = () => {
   const [holdingsData, setHoldingsData] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:8080/api/profile')
+    fetch('http://54.227.48.243:8080/api/profile')
       .then(response => response.json())
       .then(data => setProfileData(data))
       .catch(error => console.error('Error fetching profile data:', error));
 
-    fetch('http://localhost:8080/api/holdings')
+    fetch('http://54.227.48.243:8080/api/holdings')
       .then(response => response.json())
       .then(data => setHoldingsData(data))
       .catch(error => console.error('Error fetching holdings data:', error));

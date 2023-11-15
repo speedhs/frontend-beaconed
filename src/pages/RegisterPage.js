@@ -25,7 +25,7 @@ const RegisterPage = () => {
     e.preventDefault();
 
     try {
-      const url = `http://localhost:8080/api/register?userid=${formData.user_id}&usertype=${formData.user_type}&email=${formData.email}&username=${formData.user_name}&broker=${formData.broker}&password=${formData.password}`;
+      const url = `http://54.227.48.243:8080/api/register?userid=${formData.user_id}&usertype=${formData.user_type}&email=${formData.email}&username=${formData.user_name}&broker=${formData.broker}&password=${formData.password}`;
       const response = await fetch(url);
       const data = await response.json();
     
